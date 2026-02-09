@@ -1,13 +1,6 @@
 package org.example.orderhub_project.order;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +9,7 @@ import lombok.Setter;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "orders")
@@ -28,17 +22,45 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
+    @Column(name = "order_number", nullable = false, unique = true)
+    private String orderNumber;
+
+    @Column(name = "create_at")
     private Instant createAt;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "order_id")
-    private List<OrderItem> items = new ArrayList<>();
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+     private List<OrderItem> items = new ArrayList<>();
 
     public Order(List<OrderItem> items) {
         this.status = OrderStatus.CREATED;
         this.createAt = Instant.now();
         this.items.addAll(items);
+        this.orderNumber = UUID.randomUUID().toString();
+        // Устанавливаем обратную ссылку для каждого OrderItem
+        if (items != null) {
+            items.forEach(item -> item.setOrder(this));
+        }
+    }
+
+
+
+
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public List<OrderItem> getItems() {
+        return items;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public Instant getCreateAt() {
+        return createAt;
     }
 }

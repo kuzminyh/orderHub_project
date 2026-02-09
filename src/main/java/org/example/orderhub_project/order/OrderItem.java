@@ -1,13 +1,10 @@
 package org.example.orderhub_project.order;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
@@ -15,6 +12,7 @@ import java.math.BigDecimal;
 @Table(name= "order_items ")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Setter
 public class OrderItem {
 
     @Id
@@ -31,5 +29,31 @@ public class OrderItem {
         this.productName = productName;
         this.quantity = quantity;
         this.price = price;
+//     //   this.order = getOrder();
+   }
+//
+//    //добавляем обратную связь для взаимодействия
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id", nullable = false)
+    private Order order;
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setOrder(Order order) {
+
     }
 }

@@ -2,17 +2,25 @@ spring:
   application:
     name: orderHub_project
 
+  profiles:
+    active: local
+
   datasource:
-    url: jdbc:h2:mem:orderdb
-    username: sa
-    password:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:orderhub}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
     show-sql: true
 
-  h2:
-    console:
-      enabled: true
+
+server:
+  port: 8081
+
+logging:
+  level:
+    org.hibernate.sql: DEBUG
+
 
