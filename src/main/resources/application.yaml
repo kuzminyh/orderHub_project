@@ -22,5 +22,33 @@ server:
 logging:
   level:
     org.hibernate.sql: DEBUG
+    root: info
+
+management:
+
+  info:
+    env:
+      enabled: true
+    git:
+      mode: full
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+
+  endpoints:
+  web:
+    exposure:
+      include:
+        - health
+        - info
+
+info:
+  app:
+    name: "Order_Hub"
+    version: "0.0.1"
+    description: "Учимся писать продакшен код"
+
 
 

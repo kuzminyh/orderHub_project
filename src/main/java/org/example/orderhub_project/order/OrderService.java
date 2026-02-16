@@ -1,10 +1,13 @@
 package org.example.orderhub_project.order;
 
-import jakarta.transaction.Transactional;
+
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.example.orderhub_project.order.exception.NotFoundOrderException;
+import org.example.orderhub_project.order.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -32,5 +35,14 @@ public class OrderService {
         Order order = new Order(items);
 
         return orderRepository.save(order);
+    }
+
+    @Transactional(readOnly = true)
+    public Order findOrderById(Long id) {
+
+       return orderRepository.findById(id).orElseThrow(
+                () -> new NotFoundOrderException("Order not found")
+        );
+
     }
 }

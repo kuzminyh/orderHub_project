@@ -3,6 +3,8 @@ package org.example.orderhub_project.order;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +32,14 @@ public class OrderController {
       OrderResponse response = OrderResponse.from(order);
       return ResponseEntity.created(URI.create("/orders/" + order.getId()))
               .body(response);
+    }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<OrderResponse> getOrder(
+            @PathVariable Long id
+    ){
+        Order order = orderService.findOrderById(id);
+        OrderResponse response = OrderResponse.from(order);
+        return ResponseEntity.ok(response);
     }
 }
