@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name= "order_items ")
+@Table(name= "order_items")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Setter
@@ -29,7 +29,7 @@ public class OrderItem {
         this.productName = productName;
         this.quantity = quantity;
         this.price = price;
-//     //   this.order = getOrder();
+        //this.orderId = getOrder();
    }
 //
 //    //добавляем обратную связь для взаимодействия
@@ -54,6 +54,6 @@ public class OrderItem {
     }
 
     public void setOrder(Order order) {
-
+        this.order = order;
     }
 }

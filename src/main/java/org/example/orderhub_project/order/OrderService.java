@@ -3,6 +3,8 @@ package org.example.orderhub_project.order;
 
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+
+import lombok.extern.slf4j.Slf4j;
 import org.example.orderhub_project.order.exception.NotFoundOrderException;
 import org.example.orderhub_project.order.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,18 +13,23 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+//@NoArgsConstructor(force = true)
 @Service
-//@RequiredArgsConstructor
-@NoArgsConstructor(force = true)
+@RequiredArgsConstructor
+@Slf4j
 public class OrderService {
 
-    private final OrderRepository orderRepository;
+    @Autowired
+    private  OrderRepository orderRepository;
 
-    public OrderService(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
-    }
+//    public OrderService(OrderRepository orderRepository) {
+//        this.orderRepository = orderRepository;
+//    }
+
 
     public Order createOrder(CreateOrderRequest request) {
+        log.debug("В метод Create Order получен запрос{}",request);
+
         List<OrderItem> items = request.items().stream()
                 .map(item -> new OrderItem(
                         item.productId(),
@@ -34,13 +41,17 @@ public class OrderService {
 
         Order order = new Order(items);
 
+        log.debug("все успешно сохранено");
+
         return orderRepository.save(order);
     }
 
     @Transactional(readOnly = true)
-    public Order findOrderById(Long id) {
+    public Order getOrderWithItems(Long id) {
 
-       return orderRepository.findById(id).orElseThrow(
+        log.debug("В метод findOrderById получен запрос по ордеру id: {} ", id);
+
+       return orderRepository.findWithItemsById(id).orElseThrow(
                 () -> new NotFoundOrderException("Order not found")
         );
 

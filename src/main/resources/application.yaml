@@ -38,17 +38,22 @@ management:
         enabled: true
 
   endpoints:
-  web:
+   web:
     exposure:
       include:
         - health
         - info
+        - metrics
+        - prometheus
+        - loggers
 
 info:
   app:
     name: "Order_Hub"
     version: "0.0.1"
     description: "Учимся писать продакшен код"
+
+
 
 
 
