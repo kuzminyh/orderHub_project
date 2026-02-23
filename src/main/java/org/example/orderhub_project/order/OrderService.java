@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.orderhub_project.order.exception.NotFoundOrderException;
+import org.example.orderhub_project.order.metrics.annotation.BusinessMetric;
 import org.example.orderhub_project.order.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,11 @@ public class OrderService {
 //        this.orderRepository = orderRepository;
 //    }
 
-
+    @Transactional
+    @BusinessMetric(
+            value = "order.created",
+            tags = {"operation=create", "type=write"}
+    )
     public Order createOrder(CreateOrderRequest request) {
         log.debug("В метод Create Order получен запрос{}",request);
 
@@ -47,6 +52,10 @@ public class OrderService {
     }
 
     @Transactional(readOnly = true)
+    @BusinessMetric(
+            value = "orders.retrieved",
+            tags = {"operation=get", "type=read"}
+    )
     public Order getOrderWithItems(Long id) {
 
         log.debug("В метод findOrderById получен запрос по ордеру id: {} ", id);
