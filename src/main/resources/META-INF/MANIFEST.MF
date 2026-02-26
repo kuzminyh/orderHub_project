@@ -1,0 +1,53 @@
+Manifest-Version: 1.0
+Main-Class: org.example.orderhub_project.OrderhubProjectApplication
+Class-Path: jackson-core-3.0.4.jar spring-boot-http-converter-4.0.2.jar 
+ spring-data-commons-4.0.2.jar angus-activation-2.0.3.jar jakarta.transa
+ ction-api-2.0.1.jar spring-boot-starter-jackson-4.0.2.jar spring-boot-v
+ alidation-4.0.2.jar classmate-1.7.3.jar spring-boot-micrometer-observat
+ ion-4.0.2.jar logback-core-1.5.25.jar accessors-smart-2.6.0.jar spring-
+ boot-tomcat-4.0.2.jar HikariCP-7.0.2.jar log4j-api-2.25.3.jar jboss-log
+ ging-3.6.1.Final.jar snakeyaml-2.5.jar jakarta.annotation-api-3.0.0.jar
+  hibernate-core-7.2.1.Final.jar spring-boot-hibernate-4.0.2.jar spring-
+ boot-micrometer-metrics-4.0.2.jar jspecify-1.0.0.jar spring-boot-starte
+ r-micrometer-metrics-4.0.2.jar aspectjweaver-1.9.25.1.jar commons-loggi
+ ng-1.3.5.jar checker-qual-3.52.0.jar reactive-streams-1.0.4.jar microme
+ ter-commons-1.16.2.jar istack-commons-runtime-4.1.2.jar slf4j-api-2.0.1
+ 7.jar json-smart-2.6.0.jar HdrHistogram-2.2.2.jar jakarta.validation-ap
+ i-3.1.1.jar jakarta.xml.bind-api-4.0.4.jar prometheus-metrics-core-1.4.
+ 3.jar spring-boot-jackson-4.0.2.jar spring-orm-7.0.3.jar spring-aspects
+ -7.0.3.jar spring-hateoas-3.0.2.jar asm-9.7.1.jar spring-context-7.0.3.
+ jar spring-jdbc-7.0.3.jar prometheus-metrics-tracer-common-1.4.3.jar po
+ stgresql-42.7.9.jar spring-boot-starter-4.0.2.jar jul-to-slf4j-2.0.17.j
+ ar spring-data-rest-core-5.0.2.jar jakarta.activation-api-2.1.4.jar spr
+ ing-aop-7.0.3.jar spring-boot-autoconfigure-4.0.2.jar spring-webmvc-7.0
+ .3.jar r2dbc-spi-1.0.0.RELEASE.jar txw2-4.0.6.jar spring-boot-starter-j
+ ooq-4.0.2.jar spring-boot-webmvc-4.0.2.jar spring-expression-7.0.3.jar 
+ spring-boot-starter-data-jpa-4.0.2.jar lombok-1.18.42.jar spring-boot-s
+ tarter-actuator-4.0.2.jar micrometer-observation-1.16.2.jar spring-boot
+ -jpa-4.0.2.jar prometheus-metrics-config-1.4.3.jar spring-boot-data-jpa
+ -4.0.2.jar tomcat-embed-el-11.0.15.jar spring-data-relational-4.0.2.jar
+  spring-web-7.0.3.jar spring-boot-jdbc-4.0.2.jar jooq-3.19.29.jar sprin
+ g-data-rest-webmvc-5.0.2.jar prometheus-metrics-exposition-formats-1.4.
+ 3.jar spring-data-jpa-4.0.2.jar spring-boot-servlet-4.0.2.jar spring-bo
+ ot-actuator-autoconfigure-4.0.2.jar hibernate-models-1.0.1.jar spring-b
+ oot-data-rest-4.0.2.jar logback-classic-1.5.25.jar spring-tx-7.0.3.jar 
+ spring-boot-transaction-4.0.2.jar micrometer-core-1.16.2.jar tomcat-emb
+ ed-core-11.0.15.jar byte-buddy-1.17.8.jar spring-beans-7.0.3.jar spring
+ -boot-starter-jdbc-4.0.2.jar spring-boot-persistence-4.0.2.jar spring-b
+ oot-starter-tomcat-4.0.2.jar jaxb-runtime-4.0.6.jar micrometer-registry
+ -prometheus-1.16.2.jar spring-boot-sql-4.0.2.jar LatencyUtils-2.0.3.jar
+  tomcat-embed-websocket-11.0.15.jar spring-boot-actuator-4.0.2.jar prom
+ etheus-metrics-model-1.4.3.jar spring-boot-starter-web-4.0.2.jar json-p
+ ath-2.10.0.jar evo-inflector-1.3.jar spring-core-7.0.3.jar jakarta.pers
+ istence-api-3.2.0.jar jackson-databind-3.0.4.jar spring-boot-starter-we
+ bmvc-4.0.2.jar spring-plugin-core-4.0.0.jar spring-boot-health-4.0.2.ja
+ r micrometer-jakarta9-1.16.2.jar spring-boot-data-jdbc-4.0.2.jar antlr4
+ -runtime-4.13.2.jar spring-boot-web-server-4.0.2.jar jackson-annotation
+ s-2.20.jar spring-data-jdbc-4.0.2.jar log4j-to-slf4j-2.25.3.jar jakarta
+ .inject-api-2.0.1.jar spring-boot-starter-data-jdbc-4.0.2.jar spring-bo
+ ot-starter-data-rest-4.0.2.jar hibernate-validator-9.0.1.Final.jar jaxb
+ -core-4.0.6.jar spring-boot-jooq-4.0.2.jar prometheus-metrics-expositio
+ n-textformats-1.4.3.jar spring-boot-4.0.2.jar spring-boot-starter-valid
+ ation-4.0.2.jar spring-boot-starter-tomcat-runtime-4.0.2.jar spring-boo
+ t-starter-logging-4.0.2.jar spring-boot-data-commons-4.0.2.jar
+

@@ -3,8 +3,8 @@ spring:
     name: orderHub_project
 
   datasource:
-    url: jdbc:postgresql://localhost:5435/orderhub_db
-    username: orderhub_user
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5435}/orderhub_prod
+    username: orderhub_prod_user
     password: postgres
     driver-class-name: org.postgresql.Driver
 
@@ -21,14 +21,14 @@ spring:
 #    locations: classpath:db/migration
 
   liquibase:
-    user: orderhub_user
+    user: orderhub_prod_user
     password: postgres
     enabled: true
     change-log: classpath:db/changelog/changelog_master.yaml
 
 
 server:
-  port: 8082
+  port: 8084
 
 logging:
   level:

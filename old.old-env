@@ -1,0 +1,4 @@
+POSTGRES_USER=orderhub_user
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=orderhub_db
+POSTGRES_PORT=5435
