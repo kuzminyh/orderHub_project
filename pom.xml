@@ -11,6 +11,7 @@
     <groupId>org.example</groupId>
     <artifactId>orderhub_project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>orderhub_project</name>
     <description>orderhub_project</description>
     <url/>
@@ -20,6 +21,10 @@
     <developers>
         <developer/>
     </developers>
+    <modules>
+        <module>order-service</module>
+        <module>notification-service</module>
+    </modules>
     <scm>
         <connection/>
         <developerConnection/>
