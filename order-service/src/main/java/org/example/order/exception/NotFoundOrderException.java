@@ -1,4 +1,4 @@
-package org.example.orderhub_project.order.exception;
+package org.orderservice.order.exception;
 
 public class NotFoundOrderException extends RuntimeException {
     public NotFoundOrderException(String message) {

@@ -1,4 +1,4 @@
-package org.example.orderhub_project.order;
+package org.orderservice.order;
 
 public enum OrderStatus {
     CREATED,

@@ -1,4 +1,4 @@
-package org.example.orderhub_project.order;
+package org.orderservice.order;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

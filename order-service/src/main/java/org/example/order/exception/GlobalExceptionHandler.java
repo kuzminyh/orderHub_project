@@ -1,6 +1,6 @@
-package org.example.orderhub_project.order.exception;
+package org.orderservice.order.exception;
 
-import org.example.orderhub_project.order.ErrorDto;
+import org.orderservice.orderhub_project.order.ErrorDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

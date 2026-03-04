@@ -1,4 +1,4 @@
-package org.example.orderhub_project.order;
+package org.orderservice.order;
 
 import java.math.BigDecimal;
 import java.time.Instant;

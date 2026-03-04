@@ -1,4 +1,4 @@
-package org.example.orderhub_project.order.metrics.annotation;
+package org.orderservice.order.metrics.annotation;
 
 import java.lang.annotation.*;
 

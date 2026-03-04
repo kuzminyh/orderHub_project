@@ -1,4 +1,4 @@
-package org.example.orderhub_project.order.metrics.aspect;
+package org.orderservice.order.metrics.aspect;
 
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.example.orderhub_project.order.metrics.annotation.BusinessMetric;
+import org.orderservice.orderhub_project.order.metrics.annotation.BusinessMetric;
 import org.springframework.stereotype.Component;
 
 import java.time.Duration;

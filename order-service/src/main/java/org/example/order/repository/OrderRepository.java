@@ -1,6 +1,6 @@
-package org.example.orderhub_project.order.repository;
+package org.orderservice.order.repository;
 
-import org.example.orderhub_project.order.Order;
+import org.orderservice.orderhub_project.order.Order;
 import org.springframework.data.domain.Limit;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
